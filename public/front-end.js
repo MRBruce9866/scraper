@@ -1,5 +1,7 @@
+
 $("#scrape").on("click",function(){
     var timer
+    $("#load").show()
     $.get("/scrape",function(response){
         if(response){
             timer=setTimeout(function(){

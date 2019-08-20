@@ -11,16 +11,16 @@
     <title>Game Scraper!</title>
 </head>
 <body class="bg-secondary">
-<div class="jumbotron text-center text-red bg-primary mb-0">
-  <h1 class="display-4">Game Scraper</h1>
-  <p class="lead">This website we are going to demonstrate web scraping from our favorite game site IGN.</p>
+<div class="jumbotron text-center text-red bg-primary mb-0"style="text-shadow:black 3px 3px 3px;">
+  <h1 class="display-4 font-weight-bold">Game Scraper</h1>
+  <p class="lead font-weight-bold">This website we are going to demonstrate web scraping from our favorite game site IGN.</p>
   <hr class="my-4 font-weight-bold">
   <p>Look at the articles below for your favorite article! if they are indeed your favorite click the save articles button.
       This will save this article into your page.
   </p>
 </div>
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand">Game Scraper</a>
+  <a class="navbar-brand"><span class="badge badge-danger">Game Scraper</span></h1></a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -42,6 +42,9 @@
     </ul>
   </div>
 </nav>
+    <div class="row d-flex justify-content-center">
+    <img width="200px"height="200px" class="mt-5 loading" id="load"src="../../public/images/Spinner-1s-200px.gif" alt="loading">
+    </div>
     {{{body}}}
     <script src="../../public/front-end.js"></script>
 </body>

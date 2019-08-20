@@ -4,9 +4,20 @@ body,html{
 }
 .jumbotron{
     background-image:url("../public/images/sylv.jpg");
-    background-size:1600px;
+    background-size:100%;
     background-position-y:-50px;
+    background-repeat:no-repeat;
     color:crimson;
     font-weight:bold;
     
+}
+hr{
+    border-width:3px;
+    border-color:crimson;
+    opacity:.3;
+    width:50%;
+}
+
+.loading{
+    display:none;
 }
