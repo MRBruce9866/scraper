@@ -12,7 +12,8 @@ module.exports=function(app){
             var placeholder
             result.title=$(this).find(".item-title-link").text();
             placeholder=$(this).find("img").attr("src");
-            
+            result.link=$(this).find("a").attr("href")
+            console.log(result.link)
             var stripped = placeholder.substring(0, placeholder.indexOf('&') + '&'.length);
             result.image=stripped
             db.Article.create(result).then(function(dbArticle){
@@ -22,14 +23,14 @@ module.exports=function(app){
         })
         })
     })
-        db.Article.find({},function(err,data){
-            console.log(data)
-            var handlebarObj={
-                data:data
-            };
-            resp.render("index",handlebarObj)
-        })
-        
+        // db.Article.find({},function(err,data){
+        //     console.log(data)
+        //     var handlebarObj={
+        //         data:data
+        //     };
+        //     resp.render("index",handlebarObj)
+        // })
+        resp.redirect("/")
     })
     app.get("/",function(req,resp){
         db.Article.find({},function(err,data){
@@ -40,5 +41,10 @@ module.exports=function(app){
             resp.render("index",handlebarObj)
         })
         })
+    app.post("/clear",function(req,resp){
+        db.Article.remove({},function(err,data){
+            resp.redirect("/")
+        })
+    })
   
 }
