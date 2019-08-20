@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../public/style.css">
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <title>Game Scraper!</title>
+</head>
+<body class="bg-secondary">
+<div class="jumbotron text-center text-white bg-primary mb-0">
+  <h1 class="display-4">Game Scraper</h1>
+  <p class="lead">This website we are going to demonstrate web scraping from our favorite game site IGN.</p>
+  <hr class="my-4 font-weight-bold">
+  <p>Look at the articles below for your favorite article! if they are indeed your favorite click the save articles button.
+      This will save this article into your page.
+  </p>
+</div>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand">Game Scraper</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarText">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="/">Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/saved">Saved Articles</a>
+      </li>
+       <li class="nav-item">
+        <button class="btn btn-secondary mx-2"><a id="scrape" href="/scrape">Scrape New Articles</a></button>
+      </li>
+       <li class="nav-item">
+        <button class="btn btn-secondary mx-2" href="/clear">Clear Articles</button>
+      </li>
+      
+    </ul>
+  </div>
+</nav>
+    {{{body}}}
+    <script src="../../public/front-end.js"></script>
+</body>
+</html>
