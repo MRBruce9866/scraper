@@ -14,6 +14,10 @@ var ArticleSchema = new Schema({
     link:{
         type:String,
         required:true
+    },  
+    paragraph:{
+        type:String,
+        required:true
     },
     note:{
         type: Schema.Types.ObjectId,

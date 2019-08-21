@@ -2,11 +2,12 @@
     {{#each data}}
     <div class="row rounded bg-white my-3 p-3" style="border-color:blue;border-width:thick;border-style:solid;box-shadow:black 3px 3px 3px 3px;">
         <div class="col-lg-3">
-           <img class="img-thumbnail"src="{{this.image}}" alt="">
+           <img width="300px"height="200px"class="img-thumbnail"src="{{this.image}}" alt="">
         </div>
         <div class="col-lg-8 mx-4">
         <h3><a style="word-wrap:normal;text-decoration:underline;" href="https://www.ign.com/{{this.link}}">{{this.title}}</a></h3>
-        <button type="button"data-id="{{this._id}}" class="btn btn-primary my-5">Save Article</button>
+        <p>{{this.paragraph}}</p>
+        <button type="button"data-id="{{this._id}}" class="btn btn-primary my-2">Save Article</button>
         </div>
     </div>
     {{/each}}

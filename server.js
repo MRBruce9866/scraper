@@ -11,7 +11,7 @@ var PORT = process.env.PORT ||3000;
 var app = express();
 
 mongoose.connect(MONGODB_URI,{ useNewUrlParser: true });
-app.use(logger("dev"));
+//app.use(logger("dev"));
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
