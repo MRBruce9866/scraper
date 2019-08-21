@@ -1,6 +1,6 @@
 <div class="text-center p-5"id="articleRow">
     {{#each data}}
-    {{#unless saved}}
+    {{#if saved}}
     <div class="row rounded bg-white my-3 p-3" style="border-color:blue;border-width:thick;border-style:solid;box-shadow:black 3px 3px 3px 3px;">
         <div class="col-lg-3">
            <img width="300px"height="200px"class="img-thumbnail"src="{{this.image}}" alt="">
@@ -8,9 +8,9 @@
         <div class="col-lg-8 mx-4">
         <h3><a style="word-wrap:normal;text-decoration:underline;" href="{{this.link}}">{{this.title}}</a></h3>
         <p>{{this.paragraph}}</p>
-        <button type="button"id="buttonSave"data-id="{{this._id}}" class="btn btn-primary my-2">Save Article</button>
+        <button type="button"id="buttonDelete"data-id="{{this._id}}" class="btn btn-danger my-2">Delete Article</button>
         </div>
     </div>
-    {{/unless}}
+    {{/if}}
     {{/each}}
 </div>

@@ -17,3 +17,13 @@ $("#clear").on("click",function(){
         location.reload()
     })
 })
+
+$("#buttonSave").on("click",function(){
+    var id =$(this).data("id")
+    console.log(id)
+    $.post("/saveArticle/"+id).then(function(data){
+        if(data){
+            console.log("post successful")
+        }
+    })
+})
