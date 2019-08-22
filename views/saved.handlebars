@@ -8,9 +8,30 @@
         <div class="col-lg-8 mx-4">
         <h3><a style="word-wrap:normal;text-decoration:underline;" href="{{this.link}}">{{this.title}}</a></h3>
         <p>{{this.paragraph}}</p>
+        <button type="button"id="addNote"data-id="{{this._id}}"data-toggle="modal" data-target="#exampleModal" class="btn btn-primary my-2">Add Note</button>
         <button type="button"id="buttonDelete"data-id="{{this._id}}" class="btn btn-danger my-2">Delete Article</button>
         </div>
     </div>
+
+</div>
+<div class="modal" id="exampleModal"tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Add a comment</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p></p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" data-id={{this._id}}id="addNote"class="btn btn-primary">Add Note</button>
+      </div>
+    </div>
+  </div>
+</div>
     {{/if}}
     {{/each}}
-</div>

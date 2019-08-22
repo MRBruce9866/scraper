@@ -13,14 +13,10 @@ module.exports=function(app){
             var $= cheerio.load(response.data);
             $("article").each(function(i,element){
                 var result={}
-                //var placeholder
-                
                 result.title=$(this).find("h2").text();
                 result.image=$(this).find("img").attr("src");
                 result.link=$(this).find("a").attr("href")
                 result.paragraph=$(this).find(".entry-content").text()
-                // var stripped = placeholder.substring(0, placeholder.indexOf('&') + '&'.length);
-                // result.image=stripped
                 if(result.title&&result.image&&result.link&&result.paragraph){
                     db.Article.create(result).then(function(dbArticle){
                     })
@@ -56,7 +52,6 @@ module.exports=function(app){
     })
     app.get("/",function(req,resp){
         db.Article.find({},function(err,data){
-            console.log(data)
             var handlebarObj={
                 data:data
             };
@@ -69,7 +64,6 @@ module.exports=function(app){
         })
     })
     app.post("/saveArticle/:id",function(req,resp){
-        console.log(req.params.id)
         db.Article.findOneAndUpdate({
             _id:req.params.id},
             {$set:
@@ -90,6 +84,18 @@ module.exports=function(app){
                 data:data
             }
             resp.render("saved",handlebarObj)
+        })
+    })
+    app.post("/removeSaved/:id",function(req,resp){
+        db.Article.findOneAndUpdate({
+            _id:req.params.id},
+            {$set:
+                {"saved":false}
+            },function(err,data){
+            if(err)throw err
+            resp.sendStatus(200)
+        }).catch(function(err){
+            console.log(err)
         })
     })
 }

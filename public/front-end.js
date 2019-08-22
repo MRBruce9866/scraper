@@ -23,7 +23,26 @@ $("#buttonSave").on("click",function(){
     console.log(id)
     $.post("/saveArticle/"+id).then(function(data){
         if(data){
-            console.log("post successful")
+        location.reload()
         }
     })
 })
+$("#buttonDelete").on("click",function(){
+    var id=$(this).data("id")
+    console.log(id)
+    $.post("/removeSaved/"+id)
+    .then(function(data){
+        if(data){
+            console.log("post successful")
+            location.reload()
+        }
+    })
+
+})
+
+function update(){
+    $.get("/").
+    then(function(data){
+        console.log("connection successful")
+    })
+}
