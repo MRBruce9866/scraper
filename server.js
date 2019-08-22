@@ -13,10 +13,10 @@ var PORT = process.env.PORT ||3000;
 var app = express();
 app.use(express.static('public'))
 app.use(logger("dev"));
-app.use(express.urlencoded({ extended: false }));
+app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 // app.use("/public", express.static(path.join(__dirname + "/public")));
-app.use("/models", express.static(path.join(__dirname + "/models")));
+// app.use("/models", express.static(path.join(__dirname + "/models")));
 mongoose.connect(MONGODB_URI,{ useNewUrlParser: true });
 
 app.engine("handlebars",exphbs({defaultLayout:"main"}))
