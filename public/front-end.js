@@ -18,7 +18,7 @@ $("#clear").on("click",function(){
     })
 })
 
-$("#buttonSave").on("click",function(){
+$(".buttonSave").on("click",function(){
     var id =$(this).data("id")
     console.log(id)
     $.post("/saveArticle/"+id).then(function(data){
@@ -27,7 +27,7 @@ $("#buttonSave").on("click",function(){
         }
     })
 })
-$("#buttonDelete").on("click",function(){
+$(".buttonDelete").on("click",function(){
     var id=$(this).data("id")
     console.log(id)
     $.post("/removeSaved/"+id)
